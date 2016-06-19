@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <!--/*@thymesVar id="message" type="hello"*/-->
+    <div th:if="${message}">
+        <h2 th:text="${message}"></h2>
+    </div>
+
+    <div>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <table>
+                <tr><td>File to upload: </td><td><input type="file" name="file" /></td></tr>
+                <tr><td>Name: </td><td><input type="text" name="name"/></td></tr>
+                <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+            </table>
+        </form>
+    </div>
+
+    <div>
+        <ul>
+            <!--/*@thymesVar id="files" type="hello"*/-->
+            <li th:each="file: ${files}" th:text="${file}"></li>
+        </ul>
+    </div>
+
+</body>
+</html>
